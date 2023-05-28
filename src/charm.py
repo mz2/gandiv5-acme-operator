@@ -8,11 +8,9 @@ import logging
 from typing import Dict
 
 import ops
-
 from charms.acme_client_operator.v0.acme_client import AcmeClient
 from ops.model import ActiveStatus, BlockedStatus
 
-# Log messages can be retrieved using juju debug-log
 logger = logging.getLogger(__name__)
 
 
@@ -22,7 +20,7 @@ class GandiLiveDNSVersion5AcmeOperatorCharm(AcmeClient):
     REQUIRED_CONFIG = ["GANDIV5_API_KEY"]
 
     def __init__(self, *args):
-        """Uses the acme_client library to manage events."""
+        """Use the acme_client library to manage events."""
         super().__init__(*args, plugin="gandiv5")
         self.framework.observe(self.on.config_changed, self._on_config_changed)
 
@@ -31,19 +29,19 @@ class GandiLiveDNSVersion5AcmeOperatorCharm(AcmeClient):
         return self.model.config.get("gandi_api_key")
 
     @property
-    def _gandi_http_timeout(self) -> str:
+    def _gandi_http_timeout(self) -> str | None:
         return self.model.config.get("gandi_http_timeout")
 
     @property
-    def _gandi_polling_interval(self) -> str:
+    def _gandi_polling_interval(self) -> str | None:
         return self.model.config.get("gandi_polling_interval")
 
     @property
-    def _gandi_propagation_timeout(self) -> str:
+    def _gandi_propagation_timeout(self) -> str | None:
         return self.model.config.get("gandi_propagation_timeout")
 
     @property
-    def _gandi_ttl(self) -> str:
+    def _gandi_ttl(self) -> str | None:
         return self.model.config.get("gandi_ttl")
 
     @property
