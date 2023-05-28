@@ -1,0 +1,23 @@
+options:
+  email:
+    type: string
+    description: Account email address
+  server:
+    type: string
+    description: Certificate authority server
+    default: "https://acme-v02.api.letsencrypt.org/directory"
+  gandi_api_key:
+    type: string
+    description: Gandi Live DNS API Key. See https://api.gandi.net/docs/authentication/ for instructions.
+  gandi_http_timeout:
+    type: string
+    description: API request timeout (see https://go-acme.github.io/lego/dns/gandiv5/ for more information)
+  gandi_polling_interval:
+    type: string
+    description: Time between DNS propagation checks (see https://go-acme.github.io/lego/dns/gandiv5/ for more information)
+  gandi_propagation_timeout:
+    type: string
+    description: Maximum waiting time for DNS propagation (see https://go-acme.github.io/lego/dns/gandiv5/ for more information)
+  gandi_ttl:
+    type: string
+    description: The TTL of the TXT record used for the DNS challenge

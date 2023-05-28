@@ -1,0 +1,21 @@
+name: gandi-livedns-acme-operator
+display-name: Gandi LiveDNS ACME Operator
+summary: Gandi LiveDNS API backed ACME Operator
+
+description: |
+  ACME operator implementing the provider side of the `tls-certificates`
+  interface to get signed certificates from the `Let's Encrypt` ACME server using Gandi LiveDNS API.
+
+provides:
+  certificates:
+    interface: tls-certificates
+
+containers:
+  lego:
+    resource: lego-image
+
+resources:
+  lego-image:
+    type: oci-image
+    description: Distroless OCI image for lego built with rockcraft.
+    upstream-source: ghcr.io/canonical/lego:4.9.1
