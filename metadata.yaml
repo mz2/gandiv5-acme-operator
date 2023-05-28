@@ -1,4 +1,4 @@
-name: gandi-livedns-acme-operator
+name: gandiv5-acme-operator
 display-name: Gandi LiveDNS ACME Operator
 summary: Gandi LiveDNS API backed ACME Operator
 
