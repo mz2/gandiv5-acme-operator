@@ -1,7 +1,4 @@
-# gandiv5-acme-operator
-
-Charmhub package name: gandiv5-acme-operator
-More information: https://charmhub.io/gandiv5-acme-operator
+# gandiv5-acme-operator ([Charmhub](https://charmhub.io/gandiv5-acme-operator))
 
 Let's Encrypt certificates in the Juju ecosystem for Gandi LiveDNS users.
 
